@@ -67,15 +67,13 @@ const person = {
     }
 }
 
-var getIn = (object, path, def) => {
-  let result = path.reduce(
+var getIn = (object, path, def) => path.reduce(
     (currentObject, property) => {
       if (currentObject && currentObject.hasOwnProperty(property)) {return currentObject[property]}
     },
     object
-  )
-  if (!result) {return def} else {return result}
-}
+  ) || def
+
 // Basic tests
 console.log(plus(1, 2))
 console.log(multiply(3, 10))
