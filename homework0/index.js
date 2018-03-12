@@ -70,12 +70,11 @@ const person = {
 var getIn = (object, path, def) => {
   let result = path.reduce(
     (currentObject, property) => {
-      if (currentObject !== undefined) {
-        if (currentObject.hasOwnProperty(property)) {return currentObject[property]}
-      }
-    }, object
+      if (currentObject && currentObject.hasOwnProperty(property)) {return currentObject[property]}
+    },
+    object
   )
-  if (result === undefined) {return def} else {return result}
+  if (!result) {return def} else {return result}
 }
 // Basic tests
 console.log(plus(1, 2))
