@@ -44,10 +44,10 @@ const people = [
 const getQuadrant = (x, y) => {
   let answer
   if (x == 0 && y == 0) answer = 'Center'
-  if (x == 0 && y > 0) answer = 'Betweem 2 and 1'
-  if (x == 0 && y > 0) answer = 'Betweem 2 and 1'
+  if (x == 0 && y > 0) answer = 'Betweem 1 and 2'
+  if (x == 0 && y < 0) answer = 'Betweem 2 and 3'
   if (x > 0 && y == 0) answer = 'Betweem 1 and 4'
-  if (x < 0 && y == 0) answer = 'Betweem 2 and 3'
+  if (x < 0 && y == 0) answer = 'Betweem 3 and 4'
   if (x > 0 && y > 0) answer = 'In 1'
   if (x < 0 && y > 0) answer = 'In 2'
   if (x > 0 && y < 0) answer = 'In 4'
@@ -67,7 +67,7 @@ const person = {
     }
 }
 
-var getIn = (object, path, def) => path.reduce(
+const getIn = (object, path, def) => path.reduce(
     (currentObject, property) => {
       if (currentObject && currentObject.hasOwnProperty(property)) {return currentObject[property]}
     },
