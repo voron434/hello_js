@@ -6,6 +6,8 @@ img { border:0; }
 
 h1 { font-weight: normal; font-size: 1.9em; line-height: 2.0em; color: #545454; letter-spacing: -0.04em; }
 
+a {text-decoration: none;}
+
 /** containers **/
 #wrap { width: 700px; margin: 0 auto; background: #d7dfe0; border-radius: 7px; margin-top: 55px; }
 #wrap header { border-bottom: 1px solid #b6bdbe; margin: 15px 22px; margin-bottom: 35px; padding-top: 20px; position: relative;  }
@@ -18,52 +20,11 @@ h1 { font-weight: normal; font-size: 1.9em; line-height: 2.0em; color: #545454; 
 ul.list { list-style: none; width: 100%; }
 ul.list li { display: block; background: #c9d0d1; padding: 10px 15px; }
 
-ul.list li.alt { background: #d7dfe0; }
-
-ul.list li section.left { display: block; float: left; position: relative; padding-left: 20px; }
-
 ul.list li img.thumb { float: left; margin-right: 10px; }
 ul.list li img.featured-banner { position: absolute; left: -18px; top: 35px; }
 
 ul.list li h3 { font-family: "Trebuchet MS", Arial, sans-serif; font-weight: bold; text-transform: uppercase; color: #707375; font-size: 1.4em; line-height: 1.6em; }
 ul.list li span.meta { color: #93989b; font-weight: normal; font-size: 1.1em; }
-
-/** grid view **/
-ul.grid { list-style: none; margin: 0 auto; padding-left: 25px; }
-ul.grid li { position: relative; display: block; float: left; width: 220px; height: 200px; border-right: 1px solid #b6bdbe; padding: 5px 22px; margin-bottom: 20px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
-ul.grid li.third { border: 0; }
-
-ul.grid li { position: relative; }
-ul.grid li img.featured-banner { position: absolute; top: 0; }
-
-ul.grid li h3 { font-family: "Trebuchet MS", Arial, sans-serif; font-weight: bold; text-transform: uppercase; color: #707375; font-size: 1.4em; line-height: 1.5em; }
-
-
-ul.grid li span.darkview {
-opacity: 0;
-margin: 0;
-position: absolute;
-top: 0;
-left: 0;
-width: 190px;
-height: 200px;
-margin: 0 15px;
-border-radius: 6px;
-background: rgba(40, 45, 55, 0.75);
-overflow: hidden;
-text-align: center;
-padding-top: 35px;
-box-sizing: border-box;
--moz-box-sizing: border-box;
--webkit-box-sizing: border-box;
-transition: opacity 0.2s linear 0s;
--webkit-transition: opacity 0.2s linear 0s;
--moz-transition: opacity 0.25s linear 0s;
--o-transition: opacity 0.25s linear 0s;
-}
-ul.grid li:hover span.darkview { opacity: 1; }
-
-ul.grid li span.darkview a.firstbtn { display: block; margin-bottom: 10px; }
 
 /** clearfix **/
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
