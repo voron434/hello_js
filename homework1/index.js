@@ -17,17 +17,13 @@ const splitUpTitles = (jsonResponse) => jsonResponse.data.children.reduce(
 
 
 const renderPosts = (posts) => posts.forEach(
-  (post) => {
-    if (post.thumbnail == "default") post.thumbnail = "default-thumb.png"
-    document.getElementById('posts').innerHTML += `
+  (post) => document.getElementById('posts').innerHTML += `
       <li class="clearfix">
-          <img src="${post.thumbnail}" alt="default thumb" class="thumb">
+          <img src="${post.thumbnail}" onerror="this.src='default-thumb.png'" alt="default thumb" class="thumb">
           <a href="${post.permalink}">
             <h3>${post.title}</h3>
           </a>
-      </li>
-    `
-  }
+      </li>`
 )
 
 
