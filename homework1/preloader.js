@@ -1,24 +1,18 @@
-var preloader = document.getElementById("preloader_preload");
+let preloader = document.getElementById("preloader_preload")
 
-function fadeOutnojquery(el) {
+const fadeOutnojquery = (el) => {
   el.style.opacity = 1;
-  var interpreloader = setInterval(
-    function() {
-      el.style.opacity = el.style.opacity - 0.05;
+  let interpreloader = setInterval( () => {
+      el.style.opacity = el.style.opacity - 0.05
       if (el.style.opacity <=0.05) {
-        clearInterval(interpreloader);
-        preloader.style.display = "none";
+        clearInterval(interpreloader)
+        preloader.style.display = "none"
       }
     }
     ,16
-  );
+  )
 }
 
-window.onload = function(){
-  setTimeout(
-    function(){
-      fadeOutnojquery(preloader);
-    }
-    ,1000
-  );
-};
+window.onload = () => setTimeout(
+  () => fadeOutnojquery(preloader),1000
+)
