@@ -26,8 +26,10 @@ const renderPosts = (posts) => posts.forEach(
       </li>`
 )
 
+const main = () => fetch(url)
+    .then((response) => response.json())
+    .then(splitUpTitles)
+    .then(renderPosts)
 
-fetch(url)
-  .then((response) => response.json())
-  .then(splitUpTitles)
-  .then(renderPosts)
+setTimeout( main, 10000 )
+main()
