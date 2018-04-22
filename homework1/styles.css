@@ -1,0 +1,34 @@
+* { margin: 0; padding: 0; }
+
+body { background: #1b1f2b; font-size: 62.5%; font-family: Tahoma, Arial, sans-serif; color: #333; padding-bottom: 25px; }
+
+img { border:0; }
+
+h1 { font-weight: normal; font-size: 1.9em; line-height: 2.0em; color: #545454; letter-spacing: -0.04em; }
+
+a {text-decoration: none;}
+
+/** containers **/
+#wrap { width: 700px; margin: 0 auto; background: #d7dfe0; border-radius: 7px; margin-top: 55px; }
+#wrap header { border-bottom: 1px solid #b6bdbe; margin: 15px 22px; margin-bottom: 35px; padding-top: 20px; position: relative;  }
+
+#wrap footer { border-top: 1px solid #b6bdbe; padding-bottom: 40px; margin: 15px 22px;  }
+
+#wrap header .list-style-buttons { position: absolute; right: 0; }
+
+/** list view **/
+ul.list { list-style: none; width: 100%; }
+ul.list li { display: block; background: #c9d0d1; padding: 10px 15px; }
+
+ul.list li img.thumb { float: left; margin-right: 10px; }
+ul.list li img.featured-banner { position: absolute; left: -18px; top: 35px; }
+
+ul.list li h3 { font-family: "Trebuchet MS", Arial, sans-serif; font-weight: bold; text-transform: uppercase; color: #707375; font-size: 1.4em; line-height: 1.6em; }
+ul.list li span.meta { color: #93989b; font-weight: normal; font-size: 1.1em; }
+
+/** clearfix **/
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
