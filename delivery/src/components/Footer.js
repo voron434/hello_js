@@ -53,10 +53,14 @@ const FooterSocialIcon = styled.img`
   margin-top: 40px;
   margin-left: 15px;
 `
+const FooterSocialLinkHref = styled.a`
+  height: 64;
+  widht: 64;
+`
 const FooterSocialLink = ({ src, href, alt }) => (
-    <a href={href}>
+    <FooterSocialLinkHref href={href}>
         <FooterSocialIcon src={src} alt={alt} />
-    </a>
+    </FooterSocialLinkHref>
 );
 
 const FooterCopyright = styled.p`
