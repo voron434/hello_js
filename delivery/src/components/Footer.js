@@ -11,11 +11,11 @@ const media = {
   `
 }
 const FooterWrapper = styled.footer`
-  margin-top: 100px;
+  margin-top: 30px;
   padding-bottom: 64px;
   background-color: #333333;
   ${ media.small`
-    margin-top: 30px;
+    margin-top: 100px;
   `}
 ` 
 const FooterTitle = styled.h4`
