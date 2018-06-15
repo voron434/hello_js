@@ -52,6 +52,8 @@ const FooterSocialBlock = styled.div`
 const FooterSocialIcon = styled.img`
   margin-top: 40px;
   margin-left: 15px;
+  height: 64;
+  widht: 64;
 `
 const FooterSocialLinkHref = styled.a`
   height: 64;
@@ -78,22 +80,22 @@ class Footer extends React.Component {
     return (
       <FooterWrapper>
         <Grid>
-          <Row between="xs" >
-            <Col md={6} xs={12} >
+          <Row between="xs">
+            <Col md={6} xs={12}>
               <FooterTitle>Компания</FooterTitle>
               <FooterLink>Для курьеров</FooterLink>
               <FooterLink>Партнерство для ресторанов</FooterLink>
               <FooterLink>Условия проведения акций</FooterLink>
               <FooterLink>Контакты</FooterLink>
             </Col>
-            <Col md={6} xs={12} >
+            <Col md={6} xs={12}>
               <FooterSocialBlock>
                 <FooterSocialLink src="img/ig.png" href="#" alt="Instagram" />
                 <FooterSocialLink src="img/vk.png" href="#" alt="VK" />
               </FooterSocialBlock>
               <FooterCopyright>
                 &copy;2009-2018 Delivery Club&trade;
-                <br/>
+                <br />
                 Все права защищены
               </FooterCopyright>
             </Col>

@@ -65,30 +65,30 @@ class Header extends React.Component {
       <HeaderWrapper>
         <Grid>
           <Row>
-            <Col lg={3} >
+            <Col lg={3}>
               <Row center="xs">
                 <Logo src="img/logowhite.png" alt="Logo" />
               </Row>
             </Col>
-            <Col lgOffset={5} ></Col>
-            <Col lg={3} >
+            <Col lgOffset={5} />
+            <Col lg={3}>
               <Row center="xs">
                 <LoginButton>Вход / Регистрация</LoginButton>
               </Row>
             </Col>
           </Row>
           <Row>
-            <Col xs={12} >
+            <Col xs={12}>
               <HeaderTextFirst>Меняйте баллы</HeaderTextFirst>
             </Col>
           </Row>
           <Row>
-            <Col xs={12} >
+            <Col xs={12}>
               <HeaderTextSecond>на призы</HeaderTextSecond>
             </Col>
           </Row>
-          <Row center="xs" >
-            <Col xs={12} >
+          <Row center="xs">
+            <Col xs={12}>
               <AboutButton>Подробнее</AboutButton>
             </Col>
           </Row>
