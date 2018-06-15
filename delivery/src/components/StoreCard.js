@@ -36,14 +36,14 @@ const DeliveryInfo = styled.p`
   margin: 0 0 6px 0;
   font-weight: bold;
 `
-const StoreCard = ({img}) => ( 
+const StoreCard = ({store}) => ( 
   <StoreCardWrapper>
-    <Link>
-      <Image src={img}/>
-      <Title>Il Patio</Title>
-      <OrderInfo>Заказ от <MinPrice>900</MinPrice></OrderInfo>
-        <Text>Доставка</Text>
-        <DeliveryInfo>бесплатно, 90 минут</DeliveryInfo>
+    <Link href={store.link}>
+      <Image src={store.heroImageUrl} />
+      <Title>{store.title}</Title>
+      <OrderInfo>{store.priceBucket}</OrderInfo>
+      <Text>Доставка</Text>
+      <DeliveryInfo>{store.etaRange.min}-{store.etaRange.max} минут</DeliveryInfo>
     </Link>
   </StoreCardWrapper>
 );

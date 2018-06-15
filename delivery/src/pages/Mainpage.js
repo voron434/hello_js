@@ -26,13 +26,31 @@ const DescriptionCover = styled.img.attrs({
     width: 100%;
 `
 class Mainpage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stores: []
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://itc-web1-server.now.sh/stores")
+        .then(
+          (response) => response.json()
+        ).then(
+          (response_json) => this.setState({
+            stores: response_json.payload.stores
+          })
+        )
+  }
+
   render() {
     return (
       <div>
-        <Header/>
+        <Header />
         <Grid>
           <Row>
-            <Col lg={6} md={12} >
+            <Col lg={6} md={12}>
               <Title>Что мы делаем?</Title>
               <PlainText>
                 <p>
@@ -43,7 +61,7 @@ class Mainpage extends React.Component {
                 </p>
               </PlainText>                  
             </Col>
-            <Col lg={6} >
+            <Col lg={6}>
               <Hide md>
                 <DescriptionCover aria-hidden="true" />
               </Hide>
@@ -57,30 +75,13 @@ class Mainpage extends React.Component {
             </Col>
           </Row>
           <Row around="xs">
-            <Col lg={3} md={6} sm={12}>
-              <StoreCard img="https://duyt4h9nfnj50.cloudfront.net/resized/64aefca79e5d3f19540955e43e91126f-w550-bf.jpg"/>
-            </Col>
-            <Col lg={3} md={6} sm={12}>
-              <StoreCard img="https://duyt4h9nfnj50.cloudfront.net/resized/64aefca79e5d3f19540955e43e91126f-w550-bf.jpg"/>
-            </Col>
-            <Col lg={3} md={6} sm={12}>
-              <StoreCard img="https://duyt4h9nfnj50.cloudfront.net/resized/64aefca79e5d3f19540955e43e91126f-w550-bf.jpg"/>
-            </Col>
-            <Col lg={3} md={6} sm={12}>
-              <StoreCard img="https://duyt4h9nfnj50.cloudfront.net/resized/64aefca79e5d3f19540955e43e91126f-w550-bf.jpg"/>
-            </Col>
-            <Col lg={3} md={6} sm={12}>
-              <StoreCard img="https://duyt4h9nfnj50.cloudfront.net/resized/64aefca79e5d3f19540955e43e91126f-w550-bf.jpg"/>
-            </Col>
-            <Col lg={3} md={6} sm={12}>
-              <StoreCard img="https://duyt4h9nfnj50.cloudfront.net/resized/64aefca79e5d3f19540955e43e91126f-w550-bf.jpg"/>
-            </Col>
-            <Col lg={3} md={6} sm={12}>
-              <StoreCard img="https://duyt4h9nfnj50.cloudfront.net/resized/64aefca79e5d3f19540955e43e91126f-w550-bf.jpg"/>
-            </Col>
-            <Col lg={3} md={6} sm={12}>
-              <StoreCard img="https://duyt4h9nfnj50.cloudfront.net/resized/64aefca79e5d3f19540955e43e91126f-w550-bf.jpg"/>
-            </Col>
+            {this.state.stores.map(
+              (store) => (
+                <Col lg={3} md={6} sm={12}>
+                  <StoreCard store={store} />
+                </Col>
+              )
+            )}
           </Row>
           <Row center="xs">
             <Col sm={12}>
@@ -88,7 +89,7 @@ class Mainpage extends React.Component {
             </Col>
           </Row>
         </Grid>
-        <Footer/>
+        <Footer />
       </div>
     );
   }
