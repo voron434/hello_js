@@ -8,7 +8,7 @@ const media = {
     }
   `
 }
-export const Button =  styled.a`
+export const Button =  styled.button`
     padding: 12px 32px;
     line-height: 1;
     border: none;

@@ -13,30 +13,29 @@ const media = {
     }
   `
 }
-const HeaderWrapper = styled.header``
 const HeaderText = styled.span`
   font-family: "Pacifico", cursive;
 `
 class StoresListHeader extends React.Component {
   render() {
     return (
-      <HeaderWrapper>
+      <header>
         <Grid>
           <Row between="xs" bottom="lg">
             <Col lg={2}>
-              <Row center="xs">
-                  <Link to="/"><Logo src="img/logoblack.png" alt="Logo"/></Link>
-              </Row>
+              <Link to="/">
+                <Logo src="img/logoblack.png" alt="Logo"/>
+              </Link>
             </Col>
             <Col lgOffset={5} />
-            <Col lg={3}>
+            <Col lg={2}>
               <Row center="xs">
                 <LoginButton>Вход / Регистрация</LoginButton>
               </Row>
             </Col>
           </Row>
         </Grid>
-      </HeaderWrapper>
+      </header>
     );
   }
 }

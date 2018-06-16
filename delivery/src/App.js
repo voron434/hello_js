@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import './App.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import styled from 'styled-components'
+import './App.css'
 import Mainpage from './pages/Mainpage'
 import StoresList from './pages/StoresList'
 
@@ -10,18 +11,20 @@ const NotFound404 = () => (
     <p>Страница не найдена</p>
   </div>
 );
-
+const Wrapper = styled.div`
+  text-align: left;
+`
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <Wrapper className="App">
           <Switch>
             <Route exact path="/" component={Mainpage} />
             <Route path="/stores" component={StoresList} />
             <Route component={NotFound404} />
           </Switch>
-        </div>
+        </Wrapper>
       </BrowserRouter>
     );
   }

@@ -13,7 +13,7 @@ const PageWrapper = styled.div`
 `
 const HorizontalRow = styled.hr`
   color: gray;
-  margin-top: 50px;
+  margin-top: 44px;
   margin-bottom: -10px;
 `
 class StoresList extends React.Component {
@@ -22,7 +22,8 @@ class StoresList extends React.Component {
     this.state = {
       stores: [],
       loading: true,
-      offset: 0
+      offset: 0,
+      hasMore: true
     };
     this.loadMore = this.loadMore.bind(this);
   }
@@ -44,24 +45,14 @@ class StoresList extends React.Component {
             {
             stores: stores.concat(response_json.payload.stores),
             offset: offset+9,
-            loading: false
+            loading: false,
+            hasMore: response_json.payload.hasMore
             }
           )
         )
   }
   componentDidMount() {
-    fetch("https://itc-web1-server.now.sh/stores?limit=9")
-        .then(
-          (response) => response.json()
-        ).then(
-          (response_json) => this.setState(
-            {
-              stores: response_json.payload.stores,
-              loading: false,
-              offset: 9
-            }
-          )
-        )
+    this.loadMore()
   }
   render() {
     return (
@@ -89,7 +80,9 @@ class StoresList extends React.Component {
           </Row>
           <Row center="xs">
             <Col sm={12}>
+              {this.state.hasMore &&
               <Button onClick={this.loadMore}>Ещё</Button>
+              }
             </Col>
           </Row>
         </Grid>
