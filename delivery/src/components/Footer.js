@@ -64,7 +64,6 @@ const FooterSocialLink = ({ src, href, alt }) => (
         <FooterSocialIcon src={src} alt={alt} />
     </FooterSocialLinkHref>
 );
-
 const FooterCopyright = styled.p`
   text-align: center;
   margin-top: 40px;

@@ -1,21 +1,14 @@
 import Hide from 'hidden-styled'
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { RingLoader } from 'react-spinners';
 import styled from 'styled-components';
+import { Button } from '../components/Buttons'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import StoreCard from '../components/StoreCard'
-import {Button} from '../components/Buttons'
+import Title from '../components/Title'
 
-const Title =  styled.h1`
-    margin-top: 50px;
-    line-height: 48px;
-    font-family: "Open Sans";
-    font-weight: bold;
-    font-size: 35px;
-    text-align: left;
-    color: #333333;
-`
 const PlainText = styled.div`
   font-family: "Open Sans", Regular;
   font-size: 18px;
@@ -25,28 +18,33 @@ const DescriptionCover = styled.img.attrs({
 }) `
     width: 100%;
 `
+const PageWrapper = styled.div`
+  font-family: "Open Sans", sans-serif;
+`
 class Mainpage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stores: []
+      stores: [],
+      loading: true
     };
   }
-
   componentDidMount() {
-    fetch("https://itc-web1-server.now.sh/stores")
+    fetch("https://itc-web1-server.now.sh/stores?limit=8")
         .then(
           (response) => response.json()
         ).then(
-          (response_json) => this.setState({
-            stores: response_json.payload.stores
-          })
+          (response_json) => this.setState(
+            {
+              stores: response_json.payload.stores,
+              loading: false
+            }
+          )
         )
   }
-
   render() {
     return (
-      <div>
+      <PageWrapper>
         <Header />
         <Grid>
           <Row>
@@ -62,7 +60,7 @@ class Mainpage extends React.Component {
               </PlainText>                  
             </Col>
             <Col lg={6}>
-              <Hide md>
+              <Hide md sm xs>
                 <DescriptionCover aria-hidden="true" />
               </Hide>
             </Col>
@@ -76,12 +74,16 @@ class Mainpage extends React.Component {
           </Row>
           <Row around="xs">
             {this.state.stores.map(
-              (store) => (
+              (store, key) => (
                 <Col lg={3} md={6} sm={12}>
-                  <StoreCard store={store} />
+                  <StoreCard store={store} key={key} />
                 </Col>
               )
             )}
+            <RingLoader
+              color={'#000'}
+              loading={this.state.loading}
+            />
           </Row>
           <Row center="xs">
             <Col sm={12}>
@@ -90,7 +92,7 @@ class Mainpage extends React.Component {
           </Row>
         </Grid>
         <Footer />
-      </div>
+      </PageWrapper>
     );
   }
 }

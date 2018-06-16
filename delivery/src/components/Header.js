@@ -2,7 +2,8 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import { css } from 'styled-components'
-import {AboutButton, LoginButton} from './Buttons'
+import { AboutButton, LoginButton } from './Buttons'
+import Logo from './Logo'
 
 const media = {
   medium: (...args) => css`
@@ -51,13 +52,6 @@ const HeaderTextSecond = HeaderText.extend`
     line-height: 84px;
     font-size: 100px;
   `}  
-`
-const Logo = styled.img`
-  max-width: 208px;
-  max-height: 64px;
-  margin-top: 50px;
-  color: #fff;
-  margin-bottom: 5px;
 `
 class Header extends React.Component {
   render() {

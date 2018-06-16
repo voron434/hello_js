@@ -47,5 +47,4 @@ const StoreCard = ({store}) => (
     </Link>
   </StoreCardWrapper>
 );
-
 export default StoreCard;
