@@ -8,6 +8,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import StoreCard from '../components/StoreCard'
 import Title from '../components/Title'
+import { Link } from 'react-router-dom'
 
 const PlainText = styled.div`
   font-family: "Open Sans", Regular;
@@ -80,14 +81,16 @@ class Mainpage extends React.Component {
                 </Col>
               )
             )}
-            <RingLoader
-              color={'#000'}
-              loading={this.state.loading}
-            />
+            <Col lg={3} md={6} sm={12}>
+              <RingLoader
+                color={'#000'}
+                loading={this.state.loading}
+              />
+            </Col>
           </Row>
           <Row center="xs">
             <Col sm={12}>
-              <Button>Все рестораны</Button>
+              <Link to="/stores"><Button to="/stores">Все рестораны</Button></Link>
             </Col>
           </Row>
         </Grid>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import { css } from 'styled-components'
 import { LoginButton } from './Buttons'
@@ -24,7 +25,7 @@ class StoresListHeader extends React.Component {
           <Row between="xs" bottom="lg">
             <Col lg={2}>
               <Row center="xs">
-                <Logo src="img/logoblack.png" alt="Logo" />
+                  <Link to="/"><Logo src="img/logoblack.png" alt="Logo"/></Link>
               </Row>
             </Col>
             <Col lgOffset={5} />

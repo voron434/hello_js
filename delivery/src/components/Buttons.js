@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { css } from 'styled-components'
 
 const media = {
@@ -8,7 +8,7 @@ const media = {
     }
   `
 }
-export const Button =  styled.button`
+export const Button =  styled.a`
     padding: 12px 32px;
     line-height: 1;
     border: none;
