@@ -1,0 +1,3 @@
+react-spinners
+hidden-styled
+styled-components
