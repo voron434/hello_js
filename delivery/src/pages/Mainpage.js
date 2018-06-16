@@ -1,8 +1,8 @@
 import Hide from 'hidden-styled'
-import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import { RingLoader } from 'react-spinners';
-import styled from 'styled-components';
+import React from 'react'
+import { Grid, Row, Col } from 'react-flexbox-grid'
+import { RingLoader } from 'react-spinners'
+import styled from 'styled-components'
 import { Button } from '../components/Buttons'
 import Footer from '../components/Footer'
 import Header from '../components/Header'

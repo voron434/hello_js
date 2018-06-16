@@ -1,6 +1,6 @@
-import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
+import React from 'react'
+import { Grid, Row, Col } from 'react-flexbox-grid'
+import styled from 'styled-components'
 import { css } from 'styled-components'
 
 const media = {
@@ -63,7 +63,7 @@ const FooterSocialLink = ({ src, href, alt }) => (
     <FooterSocialLinkHref href={href}>
         <FooterSocialIcon src={src} alt={alt} />
     </FooterSocialLinkHref>
-);
+)
 const FooterCopyright = styled.p`
   text-align: center;
   margin-top: 40px;
@@ -104,4 +104,4 @@ class Footer extends React.Component {
     );
   }
 }
-export default Footer;
+export default Footer

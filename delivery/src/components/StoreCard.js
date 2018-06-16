@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const StoreCardWrapper = styled.div`
   margin-bottom: 48px;
@@ -47,4 +47,4 @@ const StoreCard = ({store}) => (
     </Link>
   </StoreCardWrapper>
 );
-export default StoreCard;
+export default StoreCard

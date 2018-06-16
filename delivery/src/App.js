@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { Component } from 'react'
+import './App.css'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Mainpage from './pages/Mainpage'
 import StoresList from './pages/StoresList'
 
@@ -26,4 +26,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default App
